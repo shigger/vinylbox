@@ -35,10 +35,6 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
@@ -51,6 +47,18 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <!--
+            SECURITY
+            We’ve decided to opt for the most secure default, which is, secure everything, even public and static resources.
+            By default, if Spring Security is on the classpath, Spring Boot will add @EnableWebSecurity, and rely on Spring
+            Security’s content-negotiation to decide which authentication mechanism to use. A default user with a
+            generated password will be provided (password is logged to console as default). If actuator is on the classpath,
+            the same default security configuration will also apply to actuator endpoints.
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
